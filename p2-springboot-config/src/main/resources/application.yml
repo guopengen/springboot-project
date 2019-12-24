@@ -4,6 +4,10 @@ server:
 spring:
   profiles:
     active: dev
+#application-dev.yml：开发环境
+#application-test.yml：测试环境
+#application-prod.yml：生产环境
+#首先创建上面三个配置文件,名称规范前面必须是主配置文件的名称后面加-再加自己定义的名字,后面的名字自己定义
 
 my:
   name: yanger
