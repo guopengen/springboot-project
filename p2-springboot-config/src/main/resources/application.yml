@@ -1,3 +1,5 @@
+#K:空格V
+#换成同行的话没有生效  server:port: 10900
 server:
   port: 10900
 

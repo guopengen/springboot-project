@@ -5,6 +5,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
+/** 
+ * 把这个@Configuration换成@Component也没事儿
+ */
 @Configuration
 @PropertySource(value = "classpath:config/config.properties")
 @ConfigurationProperties(prefix = "boy")

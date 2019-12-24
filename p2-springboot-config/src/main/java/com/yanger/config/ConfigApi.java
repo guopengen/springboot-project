@@ -42,4 +42,11 @@ public class ConfigApi {
         return "multiply profiles get env:" + env;
     }
 
+    /*@Value("${apph.envy}")如果当前配置的环境中没有该配置，会导致启动报错
+    private String envy;
+    @GetMapping("getEnvy")
+    public String getEnvy(){
+        return envy;
+    }*/
+
 }

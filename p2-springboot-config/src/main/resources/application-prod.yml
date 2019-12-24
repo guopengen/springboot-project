@@ -1,3 +1,6 @@
 #生产环境
 app:
   env: prod
+#如果当前用的dev环境，prod配置文件中加入该配置，会导致启动报错
+#apph:
+  #envy: prod
