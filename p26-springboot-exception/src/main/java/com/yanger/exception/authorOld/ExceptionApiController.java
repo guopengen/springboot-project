@@ -1,5 +1,6 @@
-package com.yanger.exception;
+package com.yanger.exception.authorOld;
 
+import com.yanger.exception.authorOld.AuthException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("ex")
-public class ExceptionApi {
+public class ExceptionApiController {
 
-    @GetMapping("hello")
+    @GetMapping("hello1")
     public String hello(@RequestParam int i){
         int res = 1000/i;
-        return "hello, 1000/" + i + " = " + res;
+        return "hello1, 1000/" + i + " = " + res;
     }
 
+    //http://localhost:8080/auth/?i=2
     @GetMapping("auth")
     public String auth(@RequestParam int i) throws AuthException {
         if(i > 100) {

@@ -1,4 +1,4 @@
-package com.yanger.exception;
+package com.yanger.exception.authorOld;
 
 /**
  * @author yanger
