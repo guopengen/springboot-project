@@ -2,6 +2,7 @@ package com.wangpf.springbootrequestAndResponse.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.stereotype.Component;
 
 /**
  * @Description
@@ -11,6 +12,15 @@ import org.springframework.context.annotation.ImportResource;
 
 //@Configuration
 //@ImportResource(locations= {"classpath:spring-mvc.xml"})
+    @Component
 public class Config {
+    String a;
 
+    public String getA() {
+        return a;
+    }
+
+    public void setA(String a) {
+        this.a = a;
+    }
 }

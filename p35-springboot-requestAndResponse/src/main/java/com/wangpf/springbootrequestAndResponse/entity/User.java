@@ -14,6 +14,15 @@ public class User {
     private Teacher teacher;
     List<Course> courseList;
     Map<String,User> childrenUserMap;
+    List<String> testList;
+
+    public List<String> getTestList() {
+        return testList;
+    }
+
+    public void setTestList(List<String> testList) {
+        this.testList = testList;
+    }
 
     public User() {
     }

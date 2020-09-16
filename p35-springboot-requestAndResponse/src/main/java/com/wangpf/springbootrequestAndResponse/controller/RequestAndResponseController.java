@@ -1,9 +1,15 @@
 package com.wangpf.springbootrequestAndResponse.controller;
 
+import com.wangpf.springbootrequestAndResponse.aspect.LimitKey;
+import com.wangpf.springbootrequestAndResponse.aspect.WyConfigUtils;
+import com.wangpf.springbootrequestAndResponse.config.Config;
+import com.wangpf.springbootrequestAndResponse.entity.Teacher;
 import com.wangpf.springbootrequestAndResponse.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
@@ -16,6 +22,9 @@ import java.util.Map;
 @RestController
 @RequestMapping("/requestAndResponse")
 public class RequestAndResponseController {
+    @Autowired
+    Config config;
+
     @RequestMapping(value="/addUser")
     @ResponseBody
     public String addUser(String name,int age){
@@ -24,8 +33,8 @@ public class RequestAndResponseController {
 
     @RequestMapping(value = "addUserByObject")
     @ResponseBody
-    public String addUserByObject(User user){
-        return "name是"+user.getName()+",age是"+user.getAge();
+    public String addUserByObject(User user,String type){
+        return "name是"+user.getName()+",age是"+user.getAge()+",type是"+type;
     }
 
     @RequestMapping(value = "addUserByDifName")
@@ -49,6 +58,12 @@ public class RequestAndResponseController {
     }
 
 
+    @GetMapping(value = "addUserByIds")
+    public String listStringTest(@RequestParam("ids") List<String> ids){
+        return "success";
+    }
+
+
 
 
 
@@ -68,7 +83,7 @@ public class RequestAndResponseController {
      **/
     @RequestMapping("/addUsersByString")
     @ResponseBody
-    public String addUsersByString(@RequestBody String userName){
+    public String addUsersByString(@RequestBody String userName,boolean first,boolean second){
         System.out.println(userName);
         return userName;
     }
@@ -123,6 +138,28 @@ public class RequestAndResponseController {
     }
 
 
+    @RequestMapping("/letter/listByProductType")
+    public List<String> listByProductType(@RequestParam String productType) {
+        System.out.println("-------------------------1");
+        return new ArrayList<>();
+    }
 
+    //@LimitKey(methodName="pListByProductType", url="r/requestAndResponse/letter/listByProductType")
+    @GetMapping("/letter/listByProductType")
+    public User pListByProductType(String productType) {
+        System.out.println("-------------------------2");
+        List list = new ArrayList();
+        list.add("1");
+        list.add("2");
+
+        User user = new User();
+        user.setAge(12);
+        user.setName("wang");
+
+        Teacher teacher = new Teacher();
+        teacher.setTeacherName("xiao");
+        user.setTeacher(teacher);
+        return user;
+    }
 
 }
