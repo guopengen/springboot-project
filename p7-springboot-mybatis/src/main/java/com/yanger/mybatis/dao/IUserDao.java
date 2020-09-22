@@ -2,6 +2,8 @@ package com.yanger.mybatis.dao;
 
 import com.yanger.mybatis.po.User;
 import org.apache.ibatis.annotations.*;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 

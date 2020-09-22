@@ -1,1 +1,5 @@
+logging.config=classpath:log/logback-spring.xml
+logging.path=D:/nmyslog/nmys
+imagePath = file/image/
 
+file.save.location = 123

@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("devtools")
 public class DevtoolsApi {
 
-    @GetMapping("msg")
+        @GetMapping("msg")
     public String getMsg(){
-        return "Hello devtools, I love You";
+        return "Hello devtools, I love You!!!!";
     }
 
     @GetMapping("cast")
